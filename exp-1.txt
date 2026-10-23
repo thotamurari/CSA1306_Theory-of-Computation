@@ -1,0 +1,94 @@
+# DFA Simulation in C – Strings Starting and Ending with `a`
+
+## Aim
+To write a C program to simulate a Deterministic Finite Automaton (DFA) that accepts strings starting with `a` and ending with `a`.
+
+## Algorithm
+1. Start the program.
+2. Read a string from the user.
+3. Calculate the length of the string.
+4. Check whether the first character is `a` and the last character is `a`.
+5. If both conditions are true, print **String Accepted**.
+6. Otherwise, print **String Rejected**.
+7. Stop the program.
+
+## C Program
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int len;
+
+    printf("Enter a string: ");
+    scanf("%99s", str);
+
+    len = strlen(str);
+
+    if (str[0] == 'a' && str[len - 1] == 'a') {
+        printf("String Accepted\n");
+    } else {
+        printf("String Rejected\n");
+    }
+
+    return 0;
+}
+```
+
+## Sample Outputs
+
+### Example 1: Accepted
+
+```text
+Enter a string: aba
+String Accepted
+```
+
+### Example 2: Rejected
+
+```text
+Enter a string: abb
+String Rejected
+```
+
+### Example 3: Accepted
+
+```text
+Enter a string: aaba
+String Accepted
+```
+
+## Result
+The C program successfully simulates a DFA that accepts strings starting and ending with `a`.
+
+## Language
+- C
+- Deterministic Finite Automaton (DFA)
+- Theory of Computation
+
+## How to Run
+
+1. Save the program as `dfa.c`.
+2. Compile the program:
+
+   ```bash
+   gcc dfa.c -o dfa
+   ```
+
+3. Run the program:
+
+   ```bash
+   ./dfa
+   ```
+
+   On Windows, use:
+
+   ```bash
+   dfa.exe
+   ```
+
+---
+
+**Note:** This program assumes a non-empty input string over the alphabet `{a, b}`. It checks the first and last characters to determine acceptance.
